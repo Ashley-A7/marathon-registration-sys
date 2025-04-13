@@ -1,0 +1,21 @@
+config:
+  target: "http://localhost"
+  phases:
+    - duration: 300
+      arrivalRate: 5  
+  processor: './processor.js'
+
+scenarios:
+  - name: "Node App Register Test"
+    flow:
+      - function: "randomEmail"  
+      - post:
+          url: "http://localhost:3000/register"
+          form:
+            name: "Test User"
+            email: "{{ randomEmail }}"
+            age: 28
+            distance: "10K"
+            medical: "None"
+          expect:
+            - statusCode: 200

@@ -1,0 +1,21 @@
+config:
+  target: "http://localhost"
+  phases:
+    - duration: 300
+      arrivalRate: 5  
+  processor: './processor.js'
+
+scenarios:
+  - name: "Python App Register Test"
+    flow:
+      - function: "randomEmail"
+      - post:
+          url: "http://localhost:5000/register"
+          form:
+            name: "Test User"
+            email: "{{ randomEmail }}"
+            age: 29
+            distance: "5K"
+            medical: "None"
+          expect:
+            - statusCode: 200
