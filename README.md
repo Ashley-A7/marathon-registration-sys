@@ -9,7 +9,7 @@ Follow the steps below to get the project running on your local machine using Do
 ### 1. Clone the Repository
 download the ZIP file and extract it into a folder of your choice.
 
-2. Build the Docker Containers
+### 2. Build the Docker Containers
 From the root directory, run:
 
 docker-compose build
@@ -19,7 +19,7 @@ Node.js backend
 Python backend
 MongoDB database
 
-3. Run the Project
+### 3. Run the Project
 To start all services:
 
 docker-compose up
@@ -31,6 +31,6 @@ http://localhost:5000 or http://127.0.0.1:5000/
 Node.js App:
 http://localhost:3000 or http://127.0.0.1:3000/
 
-4. Stop the Project
+### 4. Stop the Project
 When you're done, press Ctrl + C to stop the services, and then run:
 docker-compose down
